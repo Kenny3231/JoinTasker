@@ -1,0 +1,60 @@
+{
+  "name": "JoinTasker",
+  "commands": [
+    {
+      "name": "Envoyer Notif",
+      "type": "action",
+      "subtype": "message",
+      "display": {
+        "generic_type": "DONT",
+        "title_placeholder": "Titre",
+        "message_placeholder" : "Notif"
+      },
+      "logicalId": "JText"
+    },
+    {
+      "name": "Envoyer Url",
+      "type": "action",
+      "subtype": "message",
+      "display": {
+        "generic_type": "DONT",
+        "title_disable": 1,
+        "message_placeholder" : "Affichage"
+      },
+      "logicalId": "Url"
+    },
+   {
+      "name": "Ouvrir App",
+      "type": "action",
+      "subtype": "message",
+      "display": {
+        "generic_type": "DONT",
+        "title_disable": 1,
+        "message_placeholder" : "Application"
+      },
+      "logicalId": "App"
+    },
+	{
+      "name": "Envoyer SMS",
+      "type": "action",
+      "subtype": "message",
+      "display": {
+        "generic_type": "DONT",
+        "title_placeholder": "Numero",
+        "message_placeholder" : "Texte"
+      },
+      "logicalId": "Sms"
+    },
+	{
+      "name": "Telephone",
+      "type": "action",
+      "subtype": "message",
+      "display": {
+        "generic_type": "DONT",
+        "title_disable": 1,
+        "message_placeholder" : "Numero"
+      },
+      "logicalId": "Tel"
+    }
+  ]
+}

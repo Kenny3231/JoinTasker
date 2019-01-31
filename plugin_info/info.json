@@ -1,0 +1,11 @@
+{
+	"id" : "JoinTasker",
+	"name" : "JoinTasker",
+	"licence" : "AGPL",
+	"author" : "Kenny",
+	"require" : "1.0",
+	"category" : "communication",
+	"hasDependency" : false,
+	"hasOwnDeamon" : false,
+	"maxDependancyInstallTime" : 0
+}

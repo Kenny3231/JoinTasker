@@ -1,0 +1,37 @@
+{
+    "plugins\/JoinTasker\/plugin_info\/info.xml": {
+        "Plugin pour l'utilisation de l'API Joi": "Plugin pour l'utilisation de l'API Joi",
+        "Aucune": "Aucune"
+    },
+    "plugins\/JoinTasker\/desktop\/php\/JoinTasker.php": {
+        "Ajouter un client": "Ajouter un client",
+        "Rechercher": "Rechercher",
+        "Général": "Général",
+        "Nom": "Nom",
+        "Nom de l'équipement Join": "Nom de l'équipement Join",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "JoinTasker": "JoinTasker",
+        "key": "key",
+        "Supprimer": "Supprimer",
+        "Sauvegarder": "Sauvegarder",
+        "Device Id": "Device Id",
+        "Clé api Join": "Clé api Join",
+		"ico":"ico",
+        "Liste des commandes": "Liste des commandes",
+        "Type": "Type"
+    },
+    "plugins\/JoinTasker\/desktop\/js\/JoinTasker.js": {
+        "Tester": "Tester"
+    },
+    "plugins\/JoinTasker\/core\/class\/JoinTasker.class.php": {
+        "Envoyer Notif": "Envoyer Notif",
+        "Envoyer Url": "Envoyer Url",
+		"Envoyer SMS": "MEnvoyer SMS",
+        "Le champs clé ne peut être vide": "Le champs clé ne peut être vide"
+		"Le champs deviceid ne peut être vide": "Le champs deviceid ne peut être vide"
+    }
+}
