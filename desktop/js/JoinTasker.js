@@ -15,33 +15,62 @@
 * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
 */
 
+ $("#table_cmd").delegate(".listCmdInfo", 'click', function () {
+    var el = $(this).closest('.cmd').find('.cmdAttr[data-l2key=' + $(this).attr('data-input') + ']');
+    jeedom.cmd.getSelectModal({cmd: {type: 'info'}}, function (result) {
+        el.atCaret('insert', result.human);
+    });
+});
 
-function addCmdToTable(_cmd) {
+ function addCmdToTable(_cmd) {
     if (!isset(_cmd)) {
         var _cmd = {configuration: {}};
     }
+    if (!isset(_cmd.configuration)) {
+        _cmd.configuration = {};
+    }
     var tr = '<tr class="cmd" data-cmd_id="' + init(_cmd.id) + '">';
-    tr += '<td class="name">';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="id" style="display : none;">';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="name">';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="logicalId" style="display : none;"></td>';
-    tr += '<td><span class="cmdAttr" data-l1key="type"></span>';
-	tr += '<br/><span class="cmdAttr" data-l1key="subType"></span>';
-	tr += '</td>';
-	tr += '<td>';
-	 if (init(_cmd.subType) == 'numeric' || init(_cmd.subType) == 'binary') {
-    tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isHistorized" data-size="mini" checked/>{{Historiser}}</label></span> ';
-  }
-  tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" data-size="mini" checked/>{{Afficher}}</label></span> ';
-  tr += '</td>';
-  tr += '<td>';
+    tr += '<td>';
+    tr += '<span class="cmdAttr" data-l1key="id"></span>';
+    tr += '</td>';
+    tr += '<td>';
+    tr += '<input class="cmdAttr form-control input-sm" data-l1key="name" style="width : 140px;" placeholder="{{Nom}}">';
+    tr += '</td>';
+    tr += '<td>';
+    tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
+    tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
+    tr += '</td>';
+    tr += '<td>';
+    tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" checked/>{{Afficher}}</label><span> ';
+    tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="configuration" data-l2key="interact::allow" />{{Autoriser interaction}}</label><span> ';
+    tr += '<input class="cmdAttr form-control input-sm" data-l1key="unite" placeholder="{{Unité}}">';
+    tr += '</td>';
+    tr += '<td>';
     if (is_numeric(_cmd.id)) {
-        tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fa fa-cogs"></i></a> ';
-        tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fa fa-rss"></i> {{Tester}}</a>';
-		//tr += '<i class="fa fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i>'
-	}
+      tr += '<a class="btn btn-default btn-xs cmdAction" data-action="configure"><i class="fas fa-cogs"></i></a> ';
+      tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fas fa-rss"></i> {{Tester}}</a>';
+    }
+    tr += '<i class="fas fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
     tr += '</tr>';
     $('#table_cmd tbody').append(tr);
     $('#table_cmd tbody tr:last').setValues(_cmd, '.cmdAttr');
     jeedom.cmd.changeType($('#table_cmd tbody tr:last'), init(_cmd.subType));
 }
+
+$('#table_cmd tbody').on('change','.cmd .cmdAttr[data-l1key=subType]',function(){
+    var cmd = $(this).closest('.cmd');
+    if($(this).value() == 'info'){
+        cmd.find('.actionMode').hide();
+    }else{
+        cmd.find('.actionMode').show();
+    }
+});
+
+$('#table_cmd tbody').on('change','.cmd .cmdAttr[data-l1key=subType]',function(){
+    var cmd = $(this).closest('.cmd');
+    if($(this).value() == 'string'){
+        cmd.find('.cmdAttr[data-l1key=configuration][data-l2key="interact::allow"]').parent().show();
+    }else{
+        cmd.find('.cmdAttr[data-l1key=configuration][data-l2key="interact::allow"]').parent().hide();
+    }
+});
