@@ -12,7 +12,7 @@ Dans Jeedom, aller dans "plugin"/"gestion des plugins", trouver Jointasker et ac
 Utilisation du lien : https://play.google.com/store/apps/details?id=com.joaomgcd.join
 Une fois installé, aller sur la page web de join tasker https://joinjoaomgcd.appspot.com/ 
 Choisir votre équipement dans la liste puis « JOIN API » et « Show », récupéré les informations du DeviceID et de l’API Key pour plus tard
-<p><img alt="" src="docs/assets/images/JoinWeb.jpg" /></p>  
+![My helpful screenshot](docs/assets/images/JoinWeb.jpg)
 
 ### Configuration d’un équipement dans Jeedom : 
 Faire « Ajouter » et positionner les informations de Clé Join et DeviceID récupérer précédemment dans l’équipement. 
