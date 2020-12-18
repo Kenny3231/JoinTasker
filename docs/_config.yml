@@ -6,17 +6,6 @@ sass:
   style: compressed
 markdown: kramdown
 permalink: /404.html
-kramdown:
-  input: GFM
-  hard_wrap: false
-highlighter: rouge
-gems:
-- jekyll-paginate
-- jekyll-seo-tag
-exclude:
-- vendor
-plugins:
-- jekyll-seo-tag
 title: "Documentation Jeedom"
 description: "Ceci est la documentation du plugin JoinTasker, liée à la solution domotique Jeedom."
 author: "Kenny"
