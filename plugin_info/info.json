@@ -8,7 +8,7 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"documentation" : "https://kenny3231.github.io/JoinTasker/#language#",
+	"documentation" : "https://jeedom.github.io/documentation/third_plugin/JoinTasker/#language#",
     "compatibility": [
         "miniplus",
         "smart",
