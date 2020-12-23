@@ -1,6 +1,7 @@
 {
 	"id" : "JoinTasker",
 	"name" : "JoinTasker",
+	"description" : "Utilisation de Join Tasker via l'api pour la gestion des appareils Android",
 	"licence" : "AGPL",
 	"author" : "Kenny",
 	"require" : "1.0",
@@ -8,13 +9,12 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"documentation" : "https://jeedom.github.io/documentation/third_plugin/JoinTasker/#language#",
-    "compatibility": [
-        "miniplus",
-        "smart",
-        "rpi",
-        "docker",
-        "diy",
-        "mobile",
-        "v4"
-    ]
+	"changelog" : "https://jeedom.github.io/JoinTasker/#language#/changelog",
+	"documentation" : "https://jeedom.github.io/JoinTasker/#language#/",
+	"link" : {
+		"forum":"Lien vers le forum",
+		"video" : "Lien vers une video"
+	},
+	"language" : ["fr_FR"],
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile","v4"]
+}
